@@ -1,0 +1,152 @@
+:root {
+  --ink: #0b0f10;
+  --panel: rgba(11, 15, 16, 0.82);
+  --line: rgba(255, 255, 255, 0.14);
+  --signal: #4de3c1;
+  --signal-ink: #04211c;
+  --paper: #eef4f3;
+  --highlight-bg: #ffd23f;
+  --highlight-ink: #241a00;
+  --mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+}
+
+.readout {
+  position: absolute;
+  top: max(16px, env(safe-area-inset-top));
+  left: 16px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(6px);
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-family: var(--mono);
+}
+
+.readout-value {
+  font-size: 20px;
+  color: var(--signal);
+  min-width: 70px;
+}
+
+.segmented {
+  display: inline-flex;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 3px;
+  gap: 2px;
+  backdrop-filter: blur(6px);
+}
+
+.segmented button {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 12px;
+  padding: 8px 14px;
+  border-radius: 7px;
+  cursor: pointer;
+  opacity: 0.65;
+  transition: background 0.15s ease, opacity 0.15s ease, color 0.15s ease;
+}
+
+.segmented button[aria-pressed="true"] {
+  background: var(--signal);
+  color: var(--signal-ink);
+  opacity: 1;
+  font-weight: 600;
+}
+
+.icon-btn {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 12px;
+  padding: 10px 16px;
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+}
+
+.segment-badge {
+  background: var(--highlight-bg);
+  color: var(--highlight-ink);
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 13px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+}
+
+.landing {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ink);
+  z-index: 10;
+}
+
+.landing-card {
+  max-width: 420px;
+  width: 80%;
+  padding: 32px 28px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.03);
+}
+
+.landing-card h1 {
+  font-family: var(--mono);
+  color: var(--paper);
+  font-size: 26px;
+  margin: 0 0 12px;
+}
+
+.landing-copy {
+  color: #9fb0b3;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 0 24px;
+  text-align: left;
+}
+
+.landing-copy p {
+  margin: 0 0 14px;
+}
+
+.landing-steps {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.landing-steps li {
+  margin-bottom: 8px;
+}
+
+.landing-steps strong {
+  color: var(--paper);
+}
+
+.enter-ar-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: var(--signal);
+  color: var(--signal-ink);
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+}
